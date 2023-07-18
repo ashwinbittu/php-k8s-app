@@ -5,7 +5,6 @@ pipeline {
     NAME = "php-k8s-app"
     VERSION = "${env.BUILD_ID}-${env.GIT_COMMIT}"
     IMAGE_REPO = "ashwinbittu"
-    ARGOCD_TOKEN = credentials('ARGOCD_TOKEN')
     GITHUB_TOKEN = credentials('GITHUB_TOKEN')
   }
   
