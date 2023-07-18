@@ -64,7 +64,7 @@ pipeline {
       steps {
         dir("k8s-acrogcd/jenkins-demo") {
           sh "git config --global user.email 'jenkins@ci.com'"
-          sh 'git remote set-url origin https://$GITHUB_TOK@github.com/ashwinbittu/k8s-acrogcd.git'
+          sh 'git remote set-url origin https://$GITHUB_TOK@github.com/ashwinbittu/k8s-acrogcd'
           sh 'git checkout feature-req'
           sh 'git add -A'
           sh 'git commit -am "Updated image version for Build - $VERSION"'
