@@ -77,6 +77,7 @@ pipeline {
         //sh "bash pr.sh"
         sh 'echo "Opening a Pull Request"'
         sh 'echo $GITHUB_TOKEN'
+        sh 'echo "${env.BUILD_ID}"'
         sh 'echo $GITHUB_TOKEN | gh auth login --with-token'
         sh 'gh pr create --assignee "@me" --base "main" --title "Updated PHP k8s App" --body "Updated deployment specification with a new image version."'        
         sh 'echo "Success"'        
