@@ -34,11 +34,11 @@ pipeline {
     stage('Clone/Pull Repo') {
       steps {
         script {
-          if (fileExists('gitops-argocd')) {
+          if (fileExists('k8s-acrogcd')) {
 
             echo 'Cloned repo already exists - Pulling latest changes'
 
-            dir("gitops-argocd") {
+            dir("k8s-acrogcd") {
               sh 'git pull'
             }
 
