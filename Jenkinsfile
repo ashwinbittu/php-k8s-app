@@ -80,9 +80,10 @@ pipeline {
         //sh 'echo $GITHUB_TOK'
 
         //sh 'echo $GITHUB_TOK | gh auth login --with-token'
-        //sh 'gh pr create --assignee "@me" --base "main" --head feature-req --title "Updated PHP k8s App" --body "Updated deployment specification with a new image version."'    
+        sh 'git config --global --add safe.directory "/var/lib/jenkins/workspace/php-k8s/k8s-acrogcd"'
+        sh 'gh pr create --assignee "@me" --base "main" --head feature-req --title "Updated PHP k8s App" --body "Updated deployment specification with a new image version."'    
         //sh 'gh pr create --head feature-req --title "Updated PHP k8s App" --body "Updated deployment specification with a new image version."'
-        sh 'gh pr create --head main  --title "Updated PHP k8s App" --body "Updated deployment specification with a new image version." '
+        //sh 'gh pr create --head main  --title "Updated PHP k8s App" --body "Updated deployment specification with a new image version." '
         sh 'echo "Success"'        
       }
     } 
