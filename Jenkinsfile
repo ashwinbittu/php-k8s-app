@@ -44,7 +44,7 @@ pipeline {
 
           } else {
             echo 'Repo does not exists - Cloning the repo'
-            sh 'git clone -b https://github.com/ashwinbittu/k8s-acrogcd'
+            sh 'git clone -b main https://github.com/ashwinbittu/k8s-acrogcd'
           }
         }
       }
