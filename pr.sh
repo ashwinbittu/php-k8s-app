@@ -16,6 +16,6 @@ echo "Opening a Pull Request"
 #  "title": "Updated Solar System Image"
 #}'
 
-gh pr create --assignee "@ashwinbittu" --base "main"
+gh pr create --assignee "@me" --base "main"
 
 echo "Success"
