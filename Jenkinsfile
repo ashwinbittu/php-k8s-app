@@ -82,7 +82,7 @@ pipeline {
         //sh 'echo $GITHUB_TOK | gh auth login --with-token'
         //sh 'gh pr create --assignee "@me" --base "main" --head feature-req --title "Updated PHP k8s App" --body "Updated deployment specification with a new image version."'    
         //sh 'gh pr create --head feature-req --title "Updated PHP k8s App" --body "Updated deployment specification with a new image version."'
-        sh 'gh pr create -H https://$GITHUB_TOK@github.com/ashwinbittu/k8s-acrogcd:feature-req  --title "Updated PHP k8s App" --body "Updated deployment specification with a new image version." '
+        sh 'gh pr create --head main  --title "Updated PHP k8s App" --body "Updated deployment specification with a new image version." '
         sh 'echo "Success"'        
       }
     } 
