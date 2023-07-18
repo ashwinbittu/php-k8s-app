@@ -52,7 +52,7 @@ pipeline {
     
     stage('Update Manifest') {
       steps {
-        dir("gitops-argocd/jenkins-demo") {
+        dir("k8s-acrogcd/jenkins-demo") {
           sh 'sed -i "s#ashwinbittu.*#${IMAGE_REPO}/${NAME}:${VERSION}#g" deployment.yaml'
           sh 'cat deployment.yaml'
         }
@@ -61,7 +61,7 @@ pipeline {
 
     stage('Commit & Push') {
       steps {
-        dir("gitops-argocd/jenkins-demo") {
+        dir("k8s-acrogcd/jenkins-demo") {
           sh "git config --global user.email 'jenkins@ci.com'"
           sh 'git remote set-url origin https://$GITHUB_TOKEN@github.com/ashwinbittu/k8s-acrogcd'
           sh 'git checkout'
