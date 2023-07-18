@@ -45,7 +45,7 @@ pipeline {
 
           } else {
             echo 'Repo does not exists - Cloning the repo'
-            sh 'git clone -b main https://github.com/ashwinbittu/k8s-acrogcd'
+            sh 'git clone -b feature-req https://github.com/ashwinbittu/k8s-acrogcd'
           }
         }
       }
@@ -65,10 +65,10 @@ pipeline {
         dir("k8s-acrogcd/jenkins-demo") {
           sh "git config --global user.email 'jenkins@ci.com'"
           sh 'git remote set-url origin https://$GITHUB_TOK@github.com/ashwinbittu/k8s-acrogcd.git'
-          sh 'git checkout'
+          sh 'git checkout feature-req'
           sh 'git add -A'
           sh 'git commit -am "Updated image version for Build - $VERSION"'
-          sh 'git push origin'
+          sh 'git push origin feature-req'
         }
       }
     }
@@ -80,7 +80,7 @@ pipeline {
         //sh 'echo $GITHUB_TOK'
 
         //sh 'echo $GITHUB_TOK | gh auth login --with-token'
-        sh 'gh pr create --assignee "@me" --base "main" --title "Updated PHP k8s App" --body "Updated deployment specification with a new image version."'        
+        sh 'gh pr create --assignee "@me" --base "main" --head feature-req --title "Updated PHP k8s App" --body "Updated deployment specification with a new image version."'        
         sh 'echo "Success"'        
       }
     } 
