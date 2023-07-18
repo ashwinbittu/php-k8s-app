@@ -16,6 +16,6 @@ echo "Opening a Pull Request"
 #  "title": "Updated Solar System Image"
 #}'
 
-gh pr create --assignee "@me" --base "main"
+gh pr create --assignee "@me" --base "main" --title "Updated PHP k8s App" --body "Updated deployment specification with a new image version."
 
 echo "Success"
