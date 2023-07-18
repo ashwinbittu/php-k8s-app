@@ -6,7 +6,7 @@ pipeline {
     VERSION = "${env.BUILD_ID}-${env.GIT_COMMIT}"
     IMAGE_REPO = "ashwinbittu"
     //GITHUB_TOK = credentials('GITHUB_TOKEN')
-    GITHUB_TOK = "${env.GH_TOKEN}
+    GITHUB_TOK = "${env.GH_TOKEN}"
   }
   
   stages {
