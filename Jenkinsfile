@@ -4,6 +4,7 @@ pipeline {
   environment {
     NAME = "php-k8s-app"
     VERSION = "${env.BUILD_ID}-${env.GIT_COMMIT}"
+    VERSION1 = "${env.GITHUB_TOKEN}"
     IMAGE_REPO = "ashwinbittu"
     GITHUB_TOKEN = credentials('GITHUB_TOKEN')
   }
@@ -77,9 +78,9 @@ pipeline {
         //sh "bash pr.sh"
         sh 'echo "Opening a Pull Request"'
         sh 'echo $GITHUB_TOKEN'
-        sh 'echo ${env.BUILD_ID}'
-        sh 'echo ${env.GITHUB_TOKEN}'
-        sh 'echo ${env.GIT_COMMIT}'
+        sh 'echo $VERSION'
+        sh 'echo VERSION1'
+
         sh 'echo $GITHUB_TOKEN | gh auth login --with-token'
         sh 'gh pr create --assignee "@me" --base "main" --title "Updated PHP k8s App" --body "Updated deployment specification with a new image version."'        
         sh 'echo "Success"'        
